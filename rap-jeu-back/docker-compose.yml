@@ -1,0 +1,28 @@
+version: '3.1'
+services:
+  database:
+    container_name: api_database
+    image: postgres
+    restart: always
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER : "test"
+      POSTGRES_PASSWORD: "test"
+      POSTGRES_DB: "db"
+    ports:
+      - "5432:5432"
+  adminer:
+    container_name: api_adminer
+    depends_on:
+      - database
+    image: adminer
+    restart: always
+    ports:
+      - "8090:8080"
+ # app:
+  #  build: .
+   # ports:
+    #  - "8080:8080"
+    #depends_on:
+     # - database
