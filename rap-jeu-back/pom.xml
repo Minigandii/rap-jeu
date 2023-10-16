@@ -16,6 +16,8 @@
     <description>rap-jeu-back</description>
     <properties>
         <java.version>17</java.version>
+        <lombok.version>1.18.20</lombok.version>
+        <springdoc.version>2.2.0</springdoc.version>
     </properties>
     <dependencies>
         <dependency>
