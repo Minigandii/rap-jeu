@@ -3,18 +3,18 @@ package com.example.rapjeuback.models;
 import jakarta.persistence.*;
 
 @Entity
-public class Rappeur {
+public class Rapper {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nom;
-    private String surnom;
+    private String name;
+    private String nickname;
     private int nbAlbum;
     private int nbFeat;
-    private int nbDisqueOr;
-    private int nbDisquePlatine;
+    private int nbGoldDisc;
+    private int nbPlatiniumDisc;
 
-    public Rappeur() {
+    public Rapper() {
         // Constructeur par défaut
     }
 
@@ -28,21 +28,21 @@ public class Rappeur {
     }
 
     // Getter et Setter pour le champ 'nom'
-    public String getNom() {
-        return nom;
+    public String getName() {
+        return name;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setName(String nom) {
+        this.name = nom;
     }
 
     // Getter et Setter pour le champ 'surnom'
-    public String getSurnom() {
-        return surnom;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setSurnom(String surnom) {
-        this.surnom = surnom;
+    public void setNickname(String surnom) {
+        this.nickname = surnom;
     }
 
     // Getter et Setter pour le champ 'nbAlbum'
@@ -64,20 +64,20 @@ public class Rappeur {
     }
 
     // Getter et Setter pour le champ 'nbDisqueOr'
-    public int getNbDisqueOr() {
-        return nbDisqueOr;
+    public int getNbGoldDisc() {
+        return nbGoldDisc;
     }
 
-    public void setNbDisqueOr(int nbDisqueOr) {
-        this.nbDisqueOr = nbDisqueOr;
+    public void setNbGoldDisc(int nbDisqueOr) {
+        this.nbGoldDisc = nbDisqueOr;
     }
 
     // Getter et Setter pour le champ 'nbDisquePlatine'
-    public int getNbDisquePlatine() {
-        return nbDisquePlatine;
+    public int getNbPlatiniumDisc() {
+        return nbPlatiniumDisc;
     }
 
-    public void setNbDisquePlatine(int nbDisquePlatine) {
-        this.nbDisquePlatine = nbDisquePlatine;
+    public void setNbPlatiniumDisc(int nbDisquePlatine) {
+        this.nbPlatiniumDisc = nbDisquePlatine;
     }
 }

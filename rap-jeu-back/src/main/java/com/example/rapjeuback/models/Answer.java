@@ -2,17 +2,17 @@ package com.example.rapjeuback.models;
 
 import jakarta.persistence.*;
 @Entity
-public class Reponse {
+public class Answer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String enonceReponse;
-    private boolean bonneReponse;
+    private String answerTextQuestion;
+    private boolean goodAnswer;
 
     @ManyToOne
     private Question question;
 
-    public Reponse() {
+    public Answer() {
         // Constructeur par défaut
     }
 
@@ -26,21 +26,21 @@ public class Reponse {
     }
 
     // Getter et Setter pour le champ 'enonceReponse'
-    public String getEnonceReponse() {
-        return enonceReponse;
+    public String getAnswerTextQuestion() {
+        return answerTextQuestion;
     }
 
-    public void setEnonceReponse(String enonceReponse) {
-        this.enonceReponse = enonceReponse;
+    public void setAnswerTextQuestion(String enonceReponse) {
+        this.answerTextQuestion = enonceReponse;
     }
 
     // Getter et Setter pour le champ 'bonneReponse'
-    public boolean isBonneReponse() {
-        return bonneReponse;
+    public boolean isGoodAnswer() {
+        return goodAnswer;
     }
 
-    public void setBonneReponse(boolean bonneReponse) {
-        this.bonneReponse = bonneReponse;
+    public void setGoodAnswer(boolean bonneReponse) {
+        this.goodAnswer = bonneReponse;
     }
 
     // Getter et Setter pour la relation avec la question

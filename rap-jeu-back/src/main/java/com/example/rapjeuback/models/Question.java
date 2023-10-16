@@ -7,9 +7,9 @@ public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String enonce;
+    private String questionText;
     private String photo;
-    private int nbPoint;
+    private int point;
     private String type;
 
     public Question() {
@@ -26,12 +26,12 @@ public class Question {
     }
 
     // Getter et Setter pour le champ 'enonce'
-    public String getEnonce() {
-        return enonce;
+    public String getQuestionText() {
+        return questionText;
     }
 
-    public void setEnonce(String enonce) {
-        this.enonce = enonce;
+    public void setQuestionText(String enonce) {
+        this.questionText = enonce;
     }
 
     // Getter et Setter pour le champ 'photo'
@@ -44,12 +44,12 @@ public class Question {
     }
 
     // Getter et Setter pour le champ 'nbPoint'
-    public int getNbPoint() {
-        return nbPoint;
+    public int getPoint() {
+        return point;
     }
 
-    public void setNbPoint(int nbPoint) {
-        this.nbPoint = nbPoint;
+    public void setPoint(int nbPoint) {
+        this.point = nbPoint;
     }
 
     // Getter et Setter pour le champ 'type'

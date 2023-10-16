@@ -2,14 +2,14 @@ package com.example.rapjeuback.models;
 
 import jakarta.persistence.*;
 @Entity
-public class Partie {
+public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int score;
-    private int dureePartie;
+    private int gameTime;
 
-    public Partie() {
+    public Game() {
         // Constructeur par défaut
     }
 
@@ -32,11 +32,11 @@ public class Partie {
     }
 
     // Getter et Setter pour le champ 'dureePartie'
-    public int getDureePartie() {
-        return dureePartie;
+    public int getGameTime() {
+        return gameTime;
     }
 
-    public void setDureePartie(int dureePartie) {
-        this.dureePartie = dureePartie;
+    public void setGameTime(int dureePartie) {
+        this.gameTime = dureePartie;
     }
 }
