@@ -1,9 +1,13 @@
 package com.example.rapjeuback.models;
 
-import jakarta.persistence.*;
+
+import javax.persistence.*;
+
 @Entity
+@Table(name="feat")
 public class Feat {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -15,10 +19,10 @@ public class Feat {
     private Rapper rapper2;
 
     public Feat() {
-        // Constructeur par défaut
+        // Default constructor
     }
 
-    // Getter et Setter pour le champ 'id'
+    // Getter and Setter for the 'id' field
     public Long getId() {
         return id;
     }
@@ -27,7 +31,7 @@ public class Feat {
         this.id = id;
     }
 
-    // Getter et Setter pour la relation avec le premier rappeur (idRapper1)
+    // Getter and Setter for the relationship with the first rapper (idRapper1)
     public Rapper getRapper1() {
         return rapper1;
     }
@@ -36,7 +40,7 @@ public class Feat {
         this.rapper1 = rapper1;
     }
 
-    // Getter et Setter pour la relation avec le deuxième rappeur (idRapper2)
+    // Getter and Setter for the relationship with the second rapper (idRapper2)
     public Rapper getRapper2() {
         return rapper2;
     }

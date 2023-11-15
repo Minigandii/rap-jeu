@@ -1,19 +1,25 @@
 package com.example.rapjeuback.models;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+
+
 @Entity
+@Table(name="game")
 public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private int score;
+
+    @Column(name = "game_time")
     private int gameTime;
 
     public Game() {
-        // Constructeur par défaut
+        // Default constructor
     }
 
-    // Getter et Setter pour le champ 'id'
+    // Getter and Setter for the 'id' field
     public Long getId() {
         return id;
     }
@@ -22,7 +28,7 @@ public class Game {
         this.id = id;
     }
 
-    // Getter et Setter pour le champ 'score'
+    // Getter and Setter for the 'score' field
     public int getScore() {
         return score;
     }
@@ -31,12 +37,12 @@ public class Game {
         this.score = score;
     }
 
-    // Getter et Setter pour le champ 'dureePartie'
+    // Getter and Setter for the 'gameTime' field
     public int getGameTime() {
         return gameTime;
     }
 
-    public void setGameTime(int dureePartie) {
-        this.gameTime = dureePartie;
+    public void setGameTime(int gameTime) {
+        this.gameTime = gameTime;
     }
 }

@@ -1,22 +1,30 @@
 package com.example.rapjeuback.models;
 
-import jakarta.persistence.*;
+
+import javax.persistence.*;
+
 @Entity
+@Table(name="answer")
 public class Answer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "answer_text_question")
     private String answerTextQuestion;
+
+    @Column(name = "good_answer")
     private boolean goodAnswer;
 
     @ManyToOne
+    @JoinColumn(name = "question_id")
     private Question question;
 
     public Answer() {
-        // Constructeur par défaut
+        // Default constructor
     }
 
-    // Getter et Setter pour le champ 'id'
+    // Getter and Setter for the 'id' field
     public Long getId() {
         return id;
     }
@@ -25,25 +33,25 @@ public class Answer {
         this.id = id;
     }
 
-    // Getter et Setter pour le champ 'enonceReponse'
+    // Getter and Setter for the 'answerTextQuestion' field
     public String getAnswerTextQuestion() {
         return answerTextQuestion;
     }
 
-    public void setAnswerTextQuestion(String enonceReponse) {
-        this.answerTextQuestion = enonceReponse;
+    public void setAnswerTextQuestion(String answerTextQuestion) {
+        this.answerTextQuestion = answerTextQuestion;
     }
 
-    // Getter et Setter pour le champ 'bonneReponse'
+    // Getter and Setter for the 'goodAnswer' field
     public boolean isGoodAnswer() {
         return goodAnswer;
     }
 
-    public void setGoodAnswer(boolean bonneReponse) {
-        this.goodAnswer = bonneReponse;
+    public void setGoodAnswer(boolean goodAnswer) {
+        this.goodAnswer = goodAnswer;
     }
 
-    // Getter et Setter pour la relation avec la question
+    // Getter and Setter for the relationship with the question
     public Question getQuestion() {
         return question;
     }

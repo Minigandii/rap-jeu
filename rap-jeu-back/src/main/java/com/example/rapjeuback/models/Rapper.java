@@ -1,24 +1,35 @@
 package com.example.rapjeuback.models;
 
-import jakarta.persistence.*;
+
+import javax.persistence.*;
 
 @Entity
+@Table(name="rapper")
 public class Rapper {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
     private String nickname;
+
+    @Column(name = "nb_album")
     private int nbAlbum;
+
+    @Column(name = "nb_feat")
     private int nbFeat;
+
+    @Column(name = "nb_gold_disc")
     private int nbGoldDisc;
-    private int nbPlatiniumDisc;
+
+    @Column(name = "nb_platinum_disc")
+    private int nbPlatinumDisc;
 
     public Rapper() {
-        // Constructeur par défaut
+        // Default constructor
     }
 
-    // Getter et Setter pour le champ 'id'
+    // Getter and Setter for the 'id' field
     public Long getId() {
         return id;
     }
@@ -27,25 +38,25 @@ public class Rapper {
         this.id = id;
     }
 
-    // Getter et Setter pour le champ 'nom'
+    // Getter and Setter for the 'name' field
     public String getName() {
         return name;
     }
 
-    public void setName(String nom) {
-        this.name = nom;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    // Getter et Setter pour le champ 'surnom'
+    // Getter and Setter for the 'nickname' field
     public String getNickname() {
         return nickname;
     }
 
-    public void setNickname(String surnom) {
-        this.nickname = surnom;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
-    // Getter et Setter pour le champ 'nbAlbum'
+    // Getter and Setter for the 'nbAlbum' field
     public int getNbAlbum() {
         return nbAlbum;
     }
@@ -54,7 +65,7 @@ public class Rapper {
         this.nbAlbum = nbAlbum;
     }
 
-    // Getter et Setter pour le champ 'nbFeat'
+    // Getter and Setter for the 'nbFeat' field
     public int getNbFeat() {
         return nbFeat;
     }
@@ -63,21 +74,21 @@ public class Rapper {
         this.nbFeat = nbFeat;
     }
 
-    // Getter et Setter pour le champ 'nbDisqueOr'
+    // Getter and Setter for the 'nbGoldDisc' field
     public int getNbGoldDisc() {
         return nbGoldDisc;
     }
 
-    public void setNbGoldDisc(int nbDisqueOr) {
-        this.nbGoldDisc = nbDisqueOr;
+    public void setNbGoldDisc(int nbGoldDisc) {
+        this.nbGoldDisc = nbGoldDisc;
     }
 
-    // Getter et Setter pour le champ 'nbDisquePlatine'
-    public int getNbPlatiniumDisc() {
-        return nbPlatiniumDisc;
+    // Getter and Setter for the 'nbPlatinumDisc' field
+    public int getNbPlatinumDisc() {
+        return nbPlatinumDisc;
     }
 
-    public void setNbPlatiniumDisc(int nbDisquePlatine) {
-        this.nbPlatiniumDisc = nbDisquePlatine;
+    public void setNbPlatinumDisc(int nbPlatinumDisc) {
+        this.nbPlatinumDisc = nbPlatinumDisc;
     }
 }
