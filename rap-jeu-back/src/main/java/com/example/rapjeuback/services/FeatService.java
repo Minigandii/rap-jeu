@@ -1,33 +1,18 @@
 package com.example.rapjeuback.services;
 
 import com.example.rapjeuback.models.Feat;
+import com.example.rapjeuback.repositories.FeatDao;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.List;
-/*
+
 public interface FeatService {
-    private final FeatRepository featRepository;
 
-    @Autowired
-    public FeatServiceImpl(FeatRepository featRepository) {
-        this.featRepository = featRepository;
-    }
+    List<Feat> getAllFeats() ;
 
-    @Override
-    public List<Feat> getAllFeats() {
-        return featRepository.findAll();
-    }
+    Feat getFeatById(Long id);
 
-    @Override
-    public Feat getFeatById(Long id) {
-        return featRepository.findById(id).orElse(null);
-    }
+    Feat saveFeat(Feat feat);
 
-    @Override
-    public Feat saveFeat(Feat feat) {
-        return featRepository.save(feat);
-    }
-
-    @Override
-    public void deleteFeat(Long id) {
-        featRepository.deleteById(id);
-    }
-}*/
+    void deleteFeat(Long id);
+}

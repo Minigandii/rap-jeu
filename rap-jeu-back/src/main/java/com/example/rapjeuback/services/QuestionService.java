@@ -1,36 +1,16 @@
 package com.example.rapjeuback.services;
 
-import com.example.rapjeuback.models.Game;
-import java.util.List;
-
 import com.example.rapjeuback.models.Question;
+
 import java.util.List;
-/*
+import java.util.Optional;
+
 public interface QuestionService {
-    private final QuestionRepository questionRepository;
+    List<Question> getAllQuestions();
 
-    @Autowired
-    public QuestionServiceImpl(QuestionRepository questionRepository) {
-        this.questionRepository = questionRepository;
-    }
+    Optional<Question> getQuestionById(Long id);
 
-    @Override
-    public List<Question> getAllQuestions() {
-        return questionRepository.findAll();
-    }
+    Question saveQuestion(Question question);
 
-    @Override
-    public Question getQuestionById(Long id) {
-        return questionRepository.findById(id).orElse(null);
-    }
-
-    @Override
-    public Question saveQuestion(Question question) {
-        return questionRepository.save(question);
-    }
-
-    @Override
-    public void deleteQuestion(Long id) {
-        questionRepository.deleteById(id);
-    }
-}*/
+    void deleteQuestion(Long id);
+}

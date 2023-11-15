@@ -1,8 +1,7 @@
 package com.example.rapjeuback.models;
 
-import jakarta.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
@@ -20,13 +19,8 @@ public class User {
     @Column(unique = true)
     private String username;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "user_roles",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id")
-    )
-    private Set<Role> roles = new HashSet<>();
+    @Column(name="admin")
+    private boolean admin = false;
 
     public Long getId() {
         return id;
@@ -60,11 +54,11 @@ public class User {
         this.username = username;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
+    public boolean isAdmin() {
+        return admin;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public void setAdmin(boolean role) {
+        this.admin = role;
     }
 }

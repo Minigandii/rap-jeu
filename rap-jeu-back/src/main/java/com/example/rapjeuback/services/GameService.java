@@ -1,33 +1,18 @@
 package com.example.rapjeuback.services;
 
 import com.example.rapjeuback.models.Game;
+
 import java.util.List;
-/*
+import java.util.Optional;
+
 public interface GameService {
-    private final GameRepository gameRepository;
 
-    @Autowired
-    public GameServiceImpl(GameRepository gameRepository) {
-        this.gameRepository = gameRepository;
-    }
+    List<Game> getAllGames();
 
-    @Override
-    public List<Game> getAllGames() {
-        return gameRepository.findAll();
-    }
+    Optional<Game> getGameById(Long id);
 
-    @Override
-    public Game getGameById(Long id) {
-        return gameRepository.findById(id).orElse(null);
-    }
+    Game saveGame(Game game);
 
-    @Override
-    public Game saveGame(Game game) {
-        return gameRepository.save(game);
-    }
+    void deleteGame(Long id);
 
-    @Override
-    public void deleteGame(Long id) {
-        gameRepository.deleteById(id);
-    }
-}*/
+}

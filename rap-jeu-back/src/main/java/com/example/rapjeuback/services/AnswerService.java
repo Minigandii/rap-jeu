@@ -1,27 +1,15 @@
 package com.example.rapjeuback.services;
 
 import com.example.rapjeuback.models.Answer;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
-/*
+import java.util.Optional;
+
+@Service
 public interface AnswerService {
-
-    @Override
-    public List<Answer> getAllAnswers() {
-        return answerRepository.findAll();
-    }
-
-    @Override
-    public Answer getAnswerById(Long id) {
-        return answerRepository.findById(id).orElse(null);
-    }
-
-    @Override
-    public Answer saveAnswer(Answer answer) {
-        return answerRepository.save(answer);
-    }
-
-    @Override
-    public void deleteAnswer(Long id) {
-        answerRepository.deleteById(id);
-    }
-}*/
+    List<Answer> getAllAnswers();
+    Optional<Answer> getAnswerById(Long id);
+    Answer saveAnswer(Answer answer) ;
+    void deleteAnswer(Long id) ;
+}
