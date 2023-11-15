@@ -47,9 +47,14 @@ public class JpaAnswerDao implements AnswerDao {
         return null;
     }
 
+
     @Override
     public Optional<Answer> getById(Long id) {
-        return Optional.empty();
+        return entityManager.createQuery("FROM Answer a WHERE a.id = :id", Answer.class)
+                .setParameter("id", id)
+                .getResultList()
+                .stream()
+                .findFirst();
     }
 
     @Override
