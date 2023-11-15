@@ -1,16 +1,20 @@
 package com.example.rapjeuback.services;
 
+import com.example.rapjeuback.jpa.JpaUserDao;
 import com.example.rapjeuback.models.User;
 import com.example.rapjeuback.repositories.UserDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService{
-    private final UserDao userDao;
 
-    public UserServiceImpl(UserDao userDao) {
+    @Autowired
+    private final JpaUserDao userDao;
+
+    public UserServiceImpl(JpaUserDao userDao) {
         this.userDao = userDao;
     }
 

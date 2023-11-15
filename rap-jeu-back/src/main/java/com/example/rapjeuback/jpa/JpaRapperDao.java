@@ -2,12 +2,11 @@ package com.example.rapjeuback.jpa;
 
 import com.example.rapjeuback.models.Rapper;
 import com.example.rapjeuback.repositories.RapperDao;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
