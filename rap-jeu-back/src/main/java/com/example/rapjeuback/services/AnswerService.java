@@ -8,7 +8,7 @@ import java.util.Optional;
 
 @Service
 public interface AnswerService {
-    List<Answer> getAllAnswers();
+    List<Answer> findAll();
     Optional<Answer> getAnswerById(Long id);
     Answer saveAnswer(Answer answer) ;
     void deleteAnswer(Long id) ;

@@ -14,7 +14,7 @@ public class AnswerServiceImpl implements AnswerService{
     @Autowired
     AnswerDao answerDao;
     @Override
-    public List<Answer> getAllAnswers() {
+    public List<Answer> findAll() {
         return answerDao.findAll();
     }
 

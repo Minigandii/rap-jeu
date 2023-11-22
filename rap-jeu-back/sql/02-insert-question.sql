@@ -1,10 +1,3 @@
-CREATE TABLE question (
-                          id SERIAL PRIMARY KEY,
-                          question_text VARCHAR(255) NOT NULL,
-                          photo VARCHAR(255),
-                          point INT,
-                          type VARCHAR(255)
-);
 
 INSERT INTO question (question_text, photo, point, type) VALUES
                                                              ('Question1?', NULL, 10, 'Multiple Choice'),

@@ -3,16 +3,20 @@ package com.example.rapjeuback.services;
 import com.example.rapjeuback.models.Feat;
 import com.example.rapjeuback.repositories.FeatDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
+@Service
 public interface FeatService {
 
-    List<Feat> getAllFeats() ;
+    List<Feat> findAll() ;
 
-    Feat getFeatById(Long id);
+    Optional<Feat> getById(Long id);
 
-    Feat saveFeat(Feat feat);
+    Feat save(Feat feat);
 
-    void deleteFeat(Long id);
+    void deleteById(Long id);
+
 }

@@ -1,5 +1,6 @@
 package com.example.rapjeuback.services;
 
+import com.example.rapjeuback.jpa.JpaGameDao;
 import com.example.rapjeuback.models.Game;
 import com.example.rapjeuback.repositories.GameDao;
 import org.springframework.stereotype.Service;
@@ -8,9 +9,9 @@ import java.util.List;
 import java.util.Optional;
 @Service
 public class GameServiceImpl implements GameService {
-    private final GameDao gameRepository;
+    private final JpaGameDao gameRepository;
 
-    public GameServiceImpl(GameDao gameRepository) {
+    public GameServiceImpl(JpaGameDao gameRepository) {
         this.gameRepository = gameRepository;
     }
 

@@ -3,20 +3,21 @@ package com.example.rapjeuback.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.example.rapjeuback.jpa.JpaQuestionDao;
 import com.example.rapjeuback.models.Question;
 import com.example.rapjeuback.repositories.QuestionDao;
 import org.springframework.stereotype.Service;
 
 @Service
 public class QuestionServiceImpl implements QuestionService{
-    private final QuestionDao questionDao;
+    private final JpaQuestionDao questionDao;
 
-    public QuestionServiceImpl(QuestionDao questionDao) {
+    public QuestionServiceImpl(JpaQuestionDao questionDao) {
         this.questionDao = questionDao;
     }
 
     @Override
-    public List<Question> getAllQuestions() {
+    public List<Question> findAll() {
         return questionDao.findAll();
     }
 
