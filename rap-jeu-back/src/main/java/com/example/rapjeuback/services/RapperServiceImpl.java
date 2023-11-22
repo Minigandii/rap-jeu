@@ -2,9 +2,6 @@ package com.example.rapjeuback.services;
 
 import com.example.rapjeuback.jpa.JpaRapperDao;
 import com.example.rapjeuback.models.Rapper;
-import com.example.rapjeuback.repositories.RapperDao;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +17,7 @@ public class RapperServiceImpl implements RapperService {
 
 
     @Override
-    public List<Rapper> getAllRappers() {
+    public List<Rapper> findAll() {
         return rapperRepository.findAll();
     }
 

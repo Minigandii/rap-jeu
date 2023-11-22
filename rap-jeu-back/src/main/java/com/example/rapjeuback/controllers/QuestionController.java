@@ -25,12 +25,12 @@ public class QuestionController {
 
     @GetMapping("/{id}")
     public Optional<Question> getQuestionById(@PathVariable Long id) {
-        return Optional.ofNullable(questionService.getQuestionById(id).orElse(null));
+        return Optional.ofNullable(questionService.getById(id).orElse(null));
     }
 
     @DeleteMapping("/{id}")
     public void deleteQuestion(@PathVariable Long id) {
-        questionService.deleteQuestion(id);
+        questionService.delete(id);
     }
     /*
     @PostMapping("")

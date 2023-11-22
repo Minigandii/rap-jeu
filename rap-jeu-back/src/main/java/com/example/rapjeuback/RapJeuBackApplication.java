@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 public class RapJeuBackApplication {
     @Autowired
     public RapJeuBackApplication(RapperService service) {
-        System.out.println("coucou"+service.getAllRappers());
+        System.out.println("coucou"+service.findAll());
 
     }
     public static void main(String[] args) {

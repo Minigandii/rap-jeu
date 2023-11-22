@@ -25,17 +25,17 @@ public class AnswerController {
 
     @GetMapping("/{id}")
     public Optional<Answer> getAnswerById(@PathVariable Long id) {
-        return Optional.ofNullable(answerService.getAnswerById(id).orElse(null));
+        return Optional.ofNullable(answerService.getById(id).orElse(null));
     }
 
     @DeleteMapping("/{id}")
     public void deleteAnswer(@PathVariable Long id) {
-        answerService.deleteAnswer(id);
+        answerService.delete(id);
     }
     /*
     @PostMapping("")
     public void addAnswer(@RequestBody AnswerDto answerDto) {
-        answerService.addAnswer(answerDto);
+        answerService.add(AanswerDto);
     }
 
     @PostMapping("/{id}")

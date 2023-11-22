@@ -21,7 +21,7 @@ public class RapperController {
 
     @GetMapping("")
     public List<Rapper> listRappers() {
-        return rapperService.getAllRappers();
+        return rapperService.findAll();
     }
 
     @GetMapping("/{id}")

@@ -19,17 +19,17 @@ public class AnswerServiceImpl implements AnswerService{
     }
 
     @Override
-    public Optional<Answer> getAnswerById(Long id) {
+    public Optional<Answer> getById(Long id) {
         return answerDao.getById(id);
     }
 
     @Override
-    public Answer saveAnswer(Answer answer) {
+    public Answer save(Answer answer) {
         return answerDao.save(answer);
     }
 
     @Override
-    public void deleteAnswer(Long id) {
+    public void delete(Long id) {
         answerDao.deleteById(id);
     }
 }

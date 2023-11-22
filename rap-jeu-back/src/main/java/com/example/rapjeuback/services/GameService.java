@@ -7,12 +7,12 @@ import java.util.Optional;
 
 public interface GameService {
 
-    List<Game> getAllGames();
+    List<Game> findAll();
 
-    Optional<Game> getGameById(Long id);
+    Optional<Game> getById(Long id);
 
-    Game saveGame(Game game);
+    Game save(Game game);
 
-    void deleteGame(Long id);
+    void delete(Long id);
 
 }

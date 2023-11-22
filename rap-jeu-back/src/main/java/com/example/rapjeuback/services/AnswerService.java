@@ -9,7 +9,7 @@ import java.util.Optional;
 @Service
 public interface AnswerService {
     List<Answer> findAll();
-    Optional<Answer> getAnswerById(Long id);
-    Answer saveAnswer(Answer answer) ;
-    void deleteAnswer(Long id) ;
+    Optional<Answer> getById(Long id);
+    Answer save(Answer answer) ;
+    void delete(Long id) ;
 }

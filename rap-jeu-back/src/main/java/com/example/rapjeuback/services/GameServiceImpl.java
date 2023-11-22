@@ -16,22 +16,22 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public List<Game> getAllGames() {
+    public List<Game> findAll() {
         return gameRepository.findAll();
     }
 
     @Override
-    public Optional<Game> getGameById(Long id) {
+    public Optional<Game> getById(Long id) {
         return gameRepository.getById(id);
     }
 
     @Override
-    public Game saveGame(Game game) {
+    public Game save(Game game) {
         return gameRepository.save(game);
     }
 
     @Override
-    public void deleteGame(Long id) {
+    public void delete(Long id) {
         gameRepository.deleteById(id);
     }
 }

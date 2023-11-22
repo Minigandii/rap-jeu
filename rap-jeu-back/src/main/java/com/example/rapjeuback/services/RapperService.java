@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface RapperService {
-    List<Rapper> getAllRappers() ;
+    List<Rapper> findAll() ;
 
     Optional<Rapper> getById(Long id) ;
 
