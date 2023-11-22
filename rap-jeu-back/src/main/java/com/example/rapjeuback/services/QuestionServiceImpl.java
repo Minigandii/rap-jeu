@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import com.example.rapjeuback.jpa.JpaQuestionDao;
 import com.example.rapjeuback.models.Question;
-import com.example.rapjeuback.repositories.QuestionDao;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,17 +21,17 @@ public class QuestionServiceImpl implements QuestionService{
     }
 
     @Override
-    public Optional<Question> getQuestionById(Long id) {
+    public Optional<Question> getById(Long id) {
         return questionDao.getById(id);
     }
 
     @Override
-    public Question saveQuestion(Question question) {
+    public Question save(Question question) {
         return questionDao.save(question);
     }
 
     @Override
-    public void deleteQuestion(Long id) {
+    public void delete(Long id) {
         questionDao.deleteById(id);
     }
 }
