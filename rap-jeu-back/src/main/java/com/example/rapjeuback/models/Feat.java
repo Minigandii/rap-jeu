@@ -48,4 +48,40 @@ public class Feat {
     public void setRapper2(Rapper rapper2) {
         this.rapper2 = rapper2;
     }
+
+    public static final class FeatBuilder {
+        private Long id;
+        private Rapper rapper1;
+        private Rapper rapper2;
+
+        private FeatBuilder() {
+        }
+
+        public static FeatBuilder aFeat() {
+            return new FeatBuilder();
+        }
+
+        public FeatBuilder withId(Long id) {
+            this.id = id;
+            return this;
+        }
+
+        public FeatBuilder withRapper1(Rapper rapper1) {
+            this.rapper1 = rapper1;
+            return this;
+        }
+
+        public FeatBuilder withRapper2(Rapper rapper2) {
+            this.rapper2 = rapper2;
+            return this;
+        }
+
+        public Feat build() {
+            Feat feat = new Feat();
+            feat.setId(id);
+            feat.setRapper1(rapper1);
+            feat.setRapper2(rapper2);
+            return feat;
+        }
+    }
 }

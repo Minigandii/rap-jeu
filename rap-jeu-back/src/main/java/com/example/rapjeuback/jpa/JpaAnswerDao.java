@@ -3,7 +3,7 @@ package com.example.rapjeuback.jpa;
 import com.example.rapjeuback.models.Answer;
 import com.example.rapjeuback.models.Question;
 import com.example.rapjeuback.repositories.AnswerDao;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

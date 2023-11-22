@@ -59,4 +59,47 @@ public class Answer {
     public void setQuestion(Question question) {
         this.question = question;
     }
+
+    public static final class AnswerBuilder {
+        private Long id;
+        private String answerTextQuestion;
+        private boolean goodAnswer;
+        private Question question;
+
+        private AnswerBuilder() {
+        }
+
+        public static AnswerBuilder anAnswer() {
+            return new AnswerBuilder();
+        }
+
+        public AnswerBuilder withId(Long id) {
+            this.id = id;
+            return this;
+        }
+
+        public AnswerBuilder withAnswerTextQuestion(String answerTextQuestion) {
+            this.answerTextQuestion = answerTextQuestion;
+            return this;
+        }
+
+        public AnswerBuilder withGoodAnswer(boolean goodAnswer) {
+            this.goodAnswer = goodAnswer;
+            return this;
+        }
+
+        public AnswerBuilder withQuestion(Question question) {
+            this.question = question;
+            return this;
+        }
+
+        public Answer build() {
+            Answer answer = new Answer();
+            answer.setId(id);
+            answer.setAnswerTextQuestion(answerTextQuestion);
+            answer.setGoodAnswer(goodAnswer);
+            answer.setQuestion(question);
+            return answer;
+        }
+    }
 }

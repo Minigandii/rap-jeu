@@ -61,4 +61,54 @@ public class User {
     public void setAdmin(boolean role) {
         this.admin = role;
     }
+
+    public static final class UserBuilder {
+        private Long id;
+        private String email;
+        private String password;
+        private String username;
+        private boolean admin;
+
+        private UserBuilder() {
+        }
+
+        public static UserBuilder anUser() {
+            return new UserBuilder();
+        }
+
+        public UserBuilder withId(Long id) {
+            this.id = id;
+            return this;
+        }
+
+        public UserBuilder withEmail(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public UserBuilder withPassword(String password) {
+            this.password = password;
+            return this;
+        }
+
+        public UserBuilder withUsername(String username) {
+            this.username = username;
+            return this;
+        }
+
+        public UserBuilder withAdmin(boolean admin) {
+            this.admin = admin;
+            return this;
+        }
+
+        public User build() {
+            User user = new User();
+            user.setId(id);
+            user.setEmail(email);
+            user.setPassword(password);
+            user.setUsername(username);
+            user.setAdmin(admin);
+            return user;
+        }
+    }
 }

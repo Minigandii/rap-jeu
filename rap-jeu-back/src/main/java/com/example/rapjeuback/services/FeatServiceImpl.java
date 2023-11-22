@@ -3,9 +3,10 @@ package com.example.rapjeuback.services;
 import com.example.rapjeuback.models.Feat;
 import com.example.rapjeuback.repositories.FeatDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class FeatServiceImpl implements FeatService {
 
     private final FeatDao featRepository;

@@ -5,7 +5,9 @@ import java.util.Optional;
 
 import com.example.rapjeuback.models.Question;
 import com.example.rapjeuback.repositories.QuestionDao;
+import org.springframework.stereotype.Service;
 
+@Service
 public class QuestionServiceImpl implements QuestionService{
     private final QuestionDao questionDao;
 

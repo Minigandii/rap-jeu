@@ -5,18 +5,19 @@ import com.example.rapjeuback.models.Rapper;
 import com.example.rapjeuback.repositories.RapperDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RapperServiceImpl implements RapperService {
-    private final RapperDao rapperRepository;
+    JpaRapperDao rapperRepository;
 
-    public RapperServiceImpl(@Qualifier("jpaRapperDao") JpaRapperDao rapperRepository) {
+    public RapperServiceImpl(JpaRapperDao rapperRepository) {
         this.rapperRepository = rapperRepository;
     }
+
 
     @Override
     public List<Rapper> getAllRappers() {
@@ -24,8 +25,8 @@ public class RapperServiceImpl implements RapperService {
     }
 
     @Override
-    public Rapper getById(Long id) {
-        return rapperRepository.getById(id).orElse(null);
+    public Optional<Rapper> getById(Long id) {
+        return Optional.ofNullable(rapperRepository.getById(id).orElse(null));
     }
 
     @Override

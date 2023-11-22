@@ -10,10 +10,12 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "score")
     private int score;
 
     @Column(name = "game_time")
     private int gameTime;
+
 
     public Game() {
         // Default constructor
