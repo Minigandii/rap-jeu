@@ -14,7 +14,6 @@ export class GameComponent {
   rapper$: Observable<Rapper> | undefined
 
   constructor(private rapperService: RapperService) {
-    this.rapper$ = this.rapperService.findRapperById(1)
+    this.rapper$ = this.rapperService.getById(1)
   }
-
 }

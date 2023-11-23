@@ -10,7 +10,7 @@ export class RapperService {
   constructor(private http: HttpClient) { }
 
   private apiUrl = 'http://localhost:8080/';
-  findRapperById(id: number): Observable<Rapper> {
-    return this.http.get<Rapper>(`${this.apiUrl}/rappers/${id}`);
+  getById(id: number): Observable<Rapper> {
+    return this.http.get<Rapper>(`${this.apiUrl}rappers/${id}`);
   }
 }
