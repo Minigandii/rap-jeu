@@ -22,8 +22,21 @@ public class Rapper {
     @Column(name = "nb_gold_disc")
     private int nbGoldDisc;
 
-    @Column(name = "nb_platinum_disc")
+    @Column(name = "nb_platinium_disc")
     private int nbPlatinumDisc;
+
+    @Override
+    public String toString() {
+        return "Rapper{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", nbAlbum=" + nbAlbum +
+                ", nbFeat=" + nbFeat +
+                ", nbGoldDisc=" + nbGoldDisc +
+                ", nbPlatinumDisc=" + nbPlatinumDisc +
+                '}';
+    }
 
     public Rapper() {
         // Default constructor
@@ -90,5 +103,69 @@ public class Rapper {
 
     public void setNbPlatinumDisc(int nbPlatinumDisc) {
         this.nbPlatinumDisc = nbPlatinumDisc;
+    }
+
+    public static final class RapperBuilder {
+        private Long id;
+        private String name;
+        private String nickname;
+        private int nbAlbum;
+        private int nbFeat;
+        private int nbGoldDisc;
+        private int nbPlatinumDisc;
+
+        private RapperBuilder() {
+        }
+
+        public static RapperBuilder aRapper() {
+            return new RapperBuilder();
+        }
+
+        public RapperBuilder withId(Long id) {
+            this.id = id;
+            return this;
+        }
+
+        public RapperBuilder withName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public RapperBuilder withNickname(String nickname) {
+            this.nickname = nickname;
+            return this;
+        }
+
+        public RapperBuilder withNbAlbum(int nbAlbum) {
+            this.nbAlbum = nbAlbum;
+            return this;
+        }
+
+        public RapperBuilder withNbFeat(int nbFeat) {
+            this.nbFeat = nbFeat;
+            return this;
+        }
+
+        public RapperBuilder withNbGoldDisc(int nbGoldDisc) {
+            this.nbGoldDisc = nbGoldDisc;
+            return this;
+        }
+
+        public RapperBuilder withNbPlatinumDisc(int nbPlatinumDisc) {
+            this.nbPlatinumDisc = nbPlatinumDisc;
+            return this;
+        }
+
+        public Rapper build() {
+            Rapper rapper = new Rapper();
+            rapper.setId(id);
+            rapper.setName(name);
+            rapper.setNickname(nickname);
+            rapper.setNbAlbum(nbAlbum);
+            rapper.setNbFeat(nbFeat);
+            rapper.setNbGoldDisc(nbGoldDisc);
+            rapper.setNbPlatinumDisc(nbPlatinumDisc);
+            return rapper;
+        }
     }
 }

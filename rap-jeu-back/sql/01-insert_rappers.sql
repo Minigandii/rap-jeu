@@ -1,14 +1,6 @@
-CREATE TABLE rapper (
-                        id SERIAL PRIMARY KEY,
-                        name VARCHAR(255) NOT NULL,
-                        nickname VARCHAR(255),
-                        nb_album INT,
-                        nb_feat INT,
-                        nb_gold_disc INT,
-                        nb_platinum_disc INT
-);
 
-INSERT INTO rapper (name, nickname, nb_album, nb_feat, nb_gold_disc, nb_platinum_disc) VALUES
+
+INSERT INTO rapper (name, nickname, nb_album, nb_feat, nb_gold_disc, nb_platinium_disc) VALUES
                                                        ('Rapper1', 'Nick1', 3, 10, 2, 1),
                                                        ('Rapper2', 'Nick2', 5, 8, 1, 0),
                                                        ('Rapper3', 'Nick3', 7, 15, 4, 2),

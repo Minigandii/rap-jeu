@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.Optional;
 
 public interface QuestionService {
-    List<Question> getAllQuestions();
+    List<Question> findAll();
 
-    Optional<Question> getQuestionById(Long id);
+    Optional<Question> getById(Long id);
 
-    Question saveQuestion(Question question);
+    Question save(Question question);
 
-    void deleteQuestion(Long id);
+    void delete(Long id);
 }

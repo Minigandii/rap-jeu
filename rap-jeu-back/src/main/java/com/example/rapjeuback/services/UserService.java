@@ -5,11 +5,11 @@ import com.example.rapjeuback.models.User;
 import java.util.List;
 
 public interface UserService {
-    List<User> getAllUsers();
+    List<User> findAll();
 
-    User getUserById(Long id);
+    User getById(Long id);
 
-    User saveUser(User user);
+    User save(User user);
 
-    void deleteUser(Long id);
+    void delete(Long id);
 }

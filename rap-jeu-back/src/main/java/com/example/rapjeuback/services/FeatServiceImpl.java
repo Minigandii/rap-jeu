@@ -1,37 +1,38 @@
 package com.example.rapjeuback.services;
 
+import com.example.rapjeuback.jpa.JpaFeatDao;
 import com.example.rapjeuback.models.Feat;
 import com.example.rapjeuback.repositories.FeatDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
+@Service
 public class FeatServiceImpl implements FeatService {
 
-    private final FeatDao featRepository;
-
-    public FeatServiceImpl(FeatDao featRepository) {
-        this.featRepository = featRepository;
-    }
+    @Autowired
+    JpaFeatDao featRepository;
 
 
     @Override
-    public List<Feat> getAllFeats() {
+    public List<Feat> findAll() {
         return featRepository.findAll();
     }
 
     @Override
-    public Feat getFeatById(Long id) {
-        return featRepository.getById(id).orElse(null);
+    public Optional<Feat> getById(Long id) {
+        return Optional.ofNullable(featRepository.getById(id).orElse(null));
     }
 
     @Override
-    public Feat saveFeat(Feat feat) {
+    public Feat save(Feat feat) {
         return featRepository.save(feat);
     }
 
     @Override
-    public void deleteFeat(Long id) {
+    public void deleteById(Long id) {
         featRepository.deleteById(id);
     }
 }

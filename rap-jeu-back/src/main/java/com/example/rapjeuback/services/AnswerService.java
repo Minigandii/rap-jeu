@@ -8,8 +8,8 @@ import java.util.Optional;
 
 @Service
 public interface AnswerService {
-    List<Answer> getAllAnswers();
-    Optional<Answer> getAnswerById(Long id);
-    Answer saveAnswer(Answer answer) ;
-    void deleteAnswer(Long id) ;
+    List<Answer> findAll();
+    Optional<Answer> getById(Long id);
+    Answer save(Answer answer) ;
+    void delete(Long id) ;
 }

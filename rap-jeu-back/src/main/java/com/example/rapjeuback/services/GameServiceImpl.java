@@ -1,35 +1,37 @@
 package com.example.rapjeuback.services;
 
+import com.example.rapjeuback.jpa.JpaGameDao;
 import com.example.rapjeuback.models.Game;
 import com.example.rapjeuback.repositories.GameDao;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class GameServiceImpl implements GameService {
-    private final GameDao gameRepository;
+    private final JpaGameDao gameRepository;
 
-    public GameServiceImpl(GameDao gameRepository) {
+    public GameServiceImpl(JpaGameDao gameRepository) {
         this.gameRepository = gameRepository;
     }
 
     @Override
-    public List<Game> getAllGames() {
+    public List<Game> findAll() {
         return gameRepository.findAll();
     }
 
     @Override
-    public Optional<Game> getGameById(Long id) {
+    public Optional<Game> getById(Long id) {
         return gameRepository.getById(id);
     }
 
     @Override
-    public Game saveGame(Game game) {
+    public Game save(Game game) {
         return gameRepository.save(game);
     }
 
     @Override
-    public void deleteGame(Long id) {
+    public void delete(Long id) {
         gameRepository.deleteById(id);
     }
 }

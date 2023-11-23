@@ -2,6 +2,7 @@ package com.example.rapjeuback.controllers;
 
 
 import com.example.rapjeuback.models.Rapper;
+import com.example.rapjeuback.services.RapperService;
 import com.example.rapjeuback.services.RapperServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,20 +13,20 @@ import java.util.Optional;
 @RequestMapping("rappers")
 @RestController
 public class RapperController {
-    private final RapperServiceImpl rapperService;
+    private final RapperService rapperService;
 
-    public RapperController(RapperServiceImpl rapperService) {
+    public RapperController(RapperService rapperService) {
         this.rapperService = rapperService;
     }
 
     @GetMapping("")
     public List<Rapper> listRappers() {
-        return rapperService.getAllRappers();
+        return rapperService.findAll();
     }
 
     @GetMapping("/{id}")
     public Optional<Rapper> getRapperById(@PathVariable Long id) {
-        return Optional.ofNullable(rapperService.getById(id));
+        return Optional.ofNullable(rapperService.getById(id).orElse(null));
     }
 
     @DeleteMapping("/{id}")

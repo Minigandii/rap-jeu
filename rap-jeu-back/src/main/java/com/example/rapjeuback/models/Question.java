@@ -68,4 +68,54 @@ public class Question {
     public void setType(String type) {
         this.type = type;
     }
+
+    public static final class QuestionBuilder {
+        private Long id;
+        private String questionText;
+        private String photo;
+        private int point;
+        private String type;
+
+        private QuestionBuilder() {
+        }
+
+        public static QuestionBuilder aQuestion() {
+            return new QuestionBuilder();
+        }
+
+        public QuestionBuilder withId(Long id) {
+            this.id = id;
+            return this;
+        }
+
+        public QuestionBuilder withQuestionText(String questionText) {
+            this.questionText = questionText;
+            return this;
+        }
+
+        public QuestionBuilder withPhoto(String photo) {
+            this.photo = photo;
+            return this;
+        }
+
+        public QuestionBuilder withPoint(int point) {
+            this.point = point;
+            return this;
+        }
+
+        public QuestionBuilder withType(String type) {
+            this.type = type;
+            return this;
+        }
+
+        public Question build() {
+            Question question = new Question();
+            question.setId(id);
+            question.setQuestionText(questionText);
+            question.setPhoto(photo);
+            question.setPoint(point);
+            question.setType(type);
+            return question;
+        }
+    }
 }
