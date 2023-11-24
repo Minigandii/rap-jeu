@@ -1,15 +1,17 @@
-<ng-container *ngIf="rapper$ | async as rapper">
-<body>
-  <div class="container">
-    <div>
-      <button class="btn flash-button">{{rapper.name}}</button>
-      <h1>Enoncé 1</h1>
+<ng-container *ngIf="(rapper$ | async) as rapper">
+  <ng-container *ngIf="question$ | async as question">
+  <body>
+    <div class="container">
+      <div>
+        <button class="btn flash-button">{{rapper.nickname}}</button>
+        <h1>{{question.questionText}}</h1>
+      </div>
+      <div>
+        <!--<button class="btn flash-button">{{rapper.name}}</button> -->
+        <input type="text" id="maBoiteDeSaisie" placeholder="Saisissez votre réponse">
+        <button id="validerButton">Valider</button>
+      </div>
     </div>
-    <div>
-      <!--<button class="btn flash-button">{{rapper.name}}</button> -->
-      <input type="text" id="maBoiteDeSaisie" placeholder="Saisissez votre réponse">
-      <button id="validerButton">Valider</button>
-    </div>
-  </div>
-</body>
+  </body>
+  </ng-container>
 </ng-container>
