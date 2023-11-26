@@ -47,28 +47,10 @@ public class GameController {
         return ResponseEntity.ok(game);
     }
 
-//    @GetMapping("/init")
-//    public RedirectView initGame(HttpSession session, RedirectAttributes attributes) {
-//        if (session.getAttribute("questionTable") == null) {
-//            // If not, create a new instance and store it in the session
-//            List<Question> questionTable = questionService.getQuestionTable(10);
-//
-//            Game game = new Game();
-//
-//            List<Rapper> rapperTable = rapperService.getRapperTable(2);
-//
-//            session.setAttribute("questionTable", questionTable);
-//            session.setAttribute("rapperTable", rapperTable);
-//
-//            return new RedirectView("/game/sendQuestion");
-//        }
-//        return new RedirectView("/highScores");
-//    }
-    @GetMapping("/sendQuestion")
-    public RedirectView sendQuestion(HttpSession session) {
-
+    @GetMapping("/init")
+    public RedirectView initGame(HttpSession session, RedirectAttributes attributes) {
         if (session.getAttribute("questionTable") == null) {
-            // If not, create a new instance and store it in the session
+
             List<Question> questionTable = questionService.getQuestionTable(10);
 
             Game game = new Game();
@@ -77,7 +59,13 @@ public class GameController {
 
             session.setAttribute("questionTable", questionTable);
             session.setAttribute("rapperTable", rapperTable);
+
+            return new RedirectView("/game/sendQuestion");
         }
+        return new RedirectView("/highScores");
+    }
+    @GetMapping("/sendQuestion")
+    public RedirectView sendQuestion(HttpSession session) {
 
         List<Question> questionTable = (List<Question>) session.getAttribute("questionTable");
         List<Rapper> rapperTable = (List<Rapper>) session.getAttribute("rapperTable");
