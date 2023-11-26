@@ -10,7 +10,7 @@ import {GuessRapperService} from "../services/guessRapper.service";
   providedIn: "root",
 })
 @Component({
-  selector: "app-game",
+  selector: "app-guessRapper",
   templateUrl: "./guessRapper.component.html",
   styleUrls: ["./guessRapper.component.scss"],
 })
