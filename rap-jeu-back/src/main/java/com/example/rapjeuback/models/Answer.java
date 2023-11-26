@@ -1,6 +1,8 @@
 package com.example.rapjeuback.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,6 +19,7 @@ public class Answer {
     private boolean goodAnswer;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "question_id")
     private Question question;
 
@@ -81,6 +84,10 @@ public class Answer {
         public AnswerBuilder withAnswerTextQuestion(String answerTextQuestion) {
             this.answerTextQuestion = answerTextQuestion;
             return this;
+        }
+
+        public boolean isGoodAnswer() {
+            return goodAnswer;
         }
 
         public AnswerBuilder withGoodAnswer(boolean goodAnswer) {

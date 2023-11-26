@@ -15,4 +15,6 @@ public interface GameService {
 
     void delete(Long id);
 
+    List<Game> findBestGames();
+
 }

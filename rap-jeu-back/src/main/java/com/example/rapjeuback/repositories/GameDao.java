@@ -15,4 +15,7 @@ public interface GameDao {
     Game save(Game game);
 
     void deleteById(Long id);
+
+
+    List<Game> findBestGames();
 }

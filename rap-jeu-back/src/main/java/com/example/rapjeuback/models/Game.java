@@ -17,6 +17,15 @@ public class Game {
     private int gameTime;
 
 
+    @Override
+    public String toString() {
+        return "Game{" +
+                "id=" + id +
+                ", score=" + score +
+                ", gameTime=" + gameTime +
+                '}';
+    }
+
     public Game() {
         // Default constructor
     }

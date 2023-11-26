@@ -34,4 +34,9 @@ public class GameServiceImpl implements GameService {
     public void delete(Long id) {
         gameRepository.deleteById(id);
     }
+
+    @Override
+    public List<Game> findBestGames() {
+        return gameRepository.findBestGames();
+    }
 }

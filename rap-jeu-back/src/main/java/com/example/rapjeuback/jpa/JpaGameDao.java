@@ -46,4 +46,9 @@ public class JpaGameDao implements GameDao {
     public void deleteById(Long id) {
 
     }
+
+    @Override
+    public List<Game> findBestGames() {
+        return entityManager.createQuery("SELECT g FROM Game g ORDER BY g.score DESC").getResultList();
+    }
 }
