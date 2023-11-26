@@ -46,4 +46,13 @@ public class JpaQuestionDao implements QuestionDao {
     public void deleteById(Long id) {
 
     }
+
+    @Override
+    public List<Question> getQuestionTable(int number) {
+        TypedQuery<Question> query = entityManager.createQuery(
+                        "SELECT q FROM Question q ORDER BY RAND()", Question.class)
+                .setMaxResults(number);
+
+        return query.getResultList();
+    }
 }

@@ -14,4 +14,6 @@ public interface QuestionDao {
     Question save(Question question);
 
     void deleteById(Long id);
+
+    List<Question> getQuestionTable(int number);
 }

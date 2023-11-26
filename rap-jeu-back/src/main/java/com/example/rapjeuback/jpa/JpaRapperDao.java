@@ -1,11 +1,13 @@
 package com.example.rapjeuback.jpa;
 
+import com.example.rapjeuback.models.Question;
 import com.example.rapjeuback.models.Rapper;
 import com.example.rapjeuback.repositories.RapperDao;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
@@ -43,5 +45,14 @@ public class JpaRapperDao implements RapperDao {
         if (rapper != null) {
             entityManager.remove(rapper);
         }
+    }
+
+    @Override
+    public List<Rapper> getRapperTable(int number) {
+        TypedQuery<Rapper> query = entityManager.createQuery(
+                        "SELECT r FROM Rapper r ORDER BY RAND()", Rapper.class)
+                .setMaxResults(number);
+
+        return query.getResultList();
     }
 }

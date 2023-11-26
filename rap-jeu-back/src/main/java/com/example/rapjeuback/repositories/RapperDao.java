@@ -17,4 +17,6 @@ public interface RapperDao {
     Rapper save(Rapper rapper);
 
     void deleteById(Long id);
+
+    List<Rapper> getRapperTable(int number);
 }

@@ -34,4 +34,11 @@ public class QuestionServiceImpl implements QuestionService{
     public void delete(Long id) {
         questionDao.deleteById(id);
     }
+
+    @Override
+    public List<Question> getQuestionTable(int number) {
+        return questionDao.getQuestionTable(number);
+    }
+
+
 }

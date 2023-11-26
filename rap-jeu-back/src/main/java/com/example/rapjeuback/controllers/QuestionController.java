@@ -2,7 +2,9 @@ package com.example.rapjeuback.controllers;
 
 
 import com.example.rapjeuback.models.Question;
+import com.example.rapjeuback.models.Rapper;
 import com.example.rapjeuback.services.QuestionService;
+import com.example.rapjeuback.services.RapperService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,8 +16,11 @@ import java.util.Optional;
 public class QuestionController {
     private final QuestionService questionService;
 
-    public QuestionController(QuestionService questionService) {
+    private final RapperService rapperService;
+
+    public QuestionController(QuestionService questionService, RapperService rapperService) {
         this.questionService = questionService;
+        this.rapperService = rapperService;
     }
 
     @GetMapping("")
@@ -26,6 +31,10 @@ public class QuestionController {
     @GetMapping("/{id}")
     public Optional<Question> getQuestionById(@PathVariable Long id) {
         return Optional.ofNullable(questionService.getById(id).orElse(null));
+    }
+    @GetMapping("/guessRapper/{id}")
+    public Optional<Rapper> getRapperById(@PathVariable Long id) {
+        return rapperService.getById(id);
     }
 
     @DeleteMapping("/{id}")
