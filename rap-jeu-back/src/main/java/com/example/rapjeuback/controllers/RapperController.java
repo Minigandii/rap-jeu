@@ -33,14 +33,4 @@ public class RapperController {
     public void deleteRapper(@PathVariable Long id) {
         rapperService.delete(id);
     }
-    /*
-    @PostMapping("")
-    public void addRapper(@RequestBody RapperDto rapperDto) {
-        rapperService.addRapper(rapperDto);
-    }
-
-    @PostMapping("/{id}")
-    public void updateRapper(@RequestBody RapperDto rapperDto, @PathVariable Long id) {
-        rapperService.updateRapper(rapperDto, id);
-    }*/
 }

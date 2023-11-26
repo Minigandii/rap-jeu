@@ -2,6 +2,7 @@ package com.example.rapjeuback.models;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="question")
@@ -19,6 +20,11 @@ public class Question {
     private int point;
 
     private String type;
+
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Answer> answers;
+
+
 
     @Override
     public String toString() {
@@ -128,5 +134,8 @@ public class Question {
             question.setType(type);
             return question;
         }
+    }
+    public List<Answer> getAnswers() {
+        return answers;
     }
 }
