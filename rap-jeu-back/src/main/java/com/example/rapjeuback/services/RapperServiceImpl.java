@@ -36,5 +36,8 @@ public class RapperServiceImpl implements RapperService {
         rapperRepository.deleteById(id);
     }
 
-
+    @Override
+    public List<Rapper> getRapperTable(int number) {
+        return rapperRepository.getRapperTable(number);
+    }
 }

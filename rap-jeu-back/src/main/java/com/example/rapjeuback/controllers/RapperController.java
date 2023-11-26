@@ -26,7 +26,7 @@ public class RapperController {
 
     @GetMapping("/{id}")
     public Optional<Rapper> getRapperById(@PathVariable Long id) {
-        return Optional.ofNullable(rapperService.getById(id).orElse(null));
+        return rapperService.getById(id);
     }
 
     @DeleteMapping("/{id}")

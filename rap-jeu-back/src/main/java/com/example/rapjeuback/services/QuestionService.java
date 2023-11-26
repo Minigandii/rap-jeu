@@ -13,4 +13,6 @@ public interface QuestionService {
     Question save(Question question);
 
     void delete(Long id);
+
+    List<Question> getQuestionTable(int number);
 }

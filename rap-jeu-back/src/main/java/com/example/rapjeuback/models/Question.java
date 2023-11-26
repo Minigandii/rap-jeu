@@ -20,6 +20,17 @@ public class Question {
 
     private String type;
 
+    @Override
+    public String toString() {
+        return "Question{" +
+                "id=" + id +
+                ", questionText='" + questionText + '\'' +
+                ", photo='" + photo + '\'' +
+                ", point=" + point +
+                ", type='" + type + '\'' +
+                '}';
+    }
+
     public Question() {
         // Default constructor
     }

@@ -13,4 +13,6 @@ public interface RapperService {
     Rapper save(Rapper rapper) ;
 
     void delete(Long id) ;
+
+    List<Rapper> getRapperTable(int number);
 }

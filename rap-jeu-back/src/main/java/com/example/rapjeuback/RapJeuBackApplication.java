@@ -1,5 +1,6 @@
 package com.example.rapjeuback;
 
+import com.example.rapjeuback.services.QuestionService;
 import com.example.rapjeuback.services.RapperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -10,8 +11,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 @EntityScan("com.example.rapjeuback.models")
 public class RapJeuBackApplication {
     @Autowired
-    public RapJeuBackApplication(RapperService service) {
-        System.out.println("coucou"+service.findAll());
+    public RapJeuBackApplication(QuestionService service) {
+        //System.out.println("coucou"+service.getQuestionTable(10));
 
     }
     public static void main(String[] args) {
