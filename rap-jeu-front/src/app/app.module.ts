@@ -2,14 +2,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
-import { GameComponent } from './game/game.component';
+import { GuessRapperComponent } from './guessRapper/guessRapper.component';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
+import {QuestionFlashComponent} from "./questionFlash/questionFlash.component";
 
 @NgModule({
   declarations: [
     HomeComponent,
-    GameComponent,
+    GuessRapperComponent,
+    QuestionFlashComponent,
     AppComponent
   ],
   imports: [

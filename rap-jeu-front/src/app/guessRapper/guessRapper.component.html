@@ -1,10 +1,9 @@
 <ng-container *ngIf="(rapper$ | async) as rapper">
-  <ng-container *ngIf="question$ | async as question">
   <body>
     <div class="container">
       <div>
         <button class="btn flash-button">{{rapper.nickname}}</button>
-        <h1>{{question.questionText}}</h1>
+        <h1>Devine quel est le rappeur caché sous ce surnom</h1>
       </div>
       <div>
         <!--<button class="btn flash-button">{{rapper.name}}</button> -->
@@ -13,5 +12,4 @@
       </div>
     </div>
   </body>
-  </ng-container>
 </ng-container>
