@@ -7,13 +7,12 @@
       </div>
       <form [formGroup]="rapperNameForm" (ngSubmit)="onSubmit()">
         <div>
-          <label for="questionText">Question Text:</label>
-          <input type="text" id="questionText" formControlName="questionText" />
-          <!--<button class="btn flash-button">{{rapper.name}}</button> -->
-          <input type="text" id="rapperNameInput" placeholder="Saisissez votre réponse">
-          <button type="submit" [disabled]="rapperNameForm.invalid">Add Question</button>
+          <label for="rapperNameInput">Question Text:</label>
+          <input type="text" id="rapperNameInput" placeholder="Saisissez votre réponse" formControlName="rapperNameInput">
+          <button type="submit" [disabled]="rapperNameForm.invalid">Réponse</button>
         </div>
-       </form>
+      </form>
+
     </div>
   </body>
 </ng-container>
