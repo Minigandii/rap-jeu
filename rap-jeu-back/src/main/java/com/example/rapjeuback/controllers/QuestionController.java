@@ -41,14 +41,10 @@ public class QuestionController {
     public void deleteQuestion(@PathVariable Long id) {
         questionService.delete(id);
     }
-    /*
-    @PostMapping("")
-    public void addQuestion(@RequestBody QuestionDto questionDto) {
-        questionService.addQuestion(questionDto);
+
+    @PostMapping("/add")
+    public void addQuestion(@RequestBody Question question) {
+        questionService.addQuestion(question);
     }
 
-    @PostMapping("/{id}")
-    public void updateQuestion(@RequestBody QuestionDto questionDto, @PathVariable Long id) {
-        questionService.updateQuestion(questionDto, id);
-    }*/
 }

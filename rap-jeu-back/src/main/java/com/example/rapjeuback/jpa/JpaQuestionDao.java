@@ -55,4 +55,9 @@ public class JpaQuestionDao implements QuestionDao {
 
         return query.getResultList();
     }
+
+    @Override
+    public void addQuestion(Question question) {
+        entityManager.persist(question);
+    }
 }

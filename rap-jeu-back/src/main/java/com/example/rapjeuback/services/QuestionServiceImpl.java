@@ -40,5 +40,10 @@ public class QuestionServiceImpl implements QuestionService{
         return questionDao.getQuestionTable(number);
     }
 
+    @Override
+    public void addQuestion(Question question) {
+        questionDao.addQuestion(question);
+    }
+
 
 }

@@ -61,4 +61,9 @@ public class JpaAnswerDao implements AnswerDao {
     public void deleteById(Long id) {
 
     }
+
+    @Override
+    public void addAnswer(Answer answer) {
+        entityManager.persist(answer);
+    }
 }

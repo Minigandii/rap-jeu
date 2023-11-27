@@ -15,4 +15,7 @@ public interface QuestionService {
     void delete(Long id);
 
     List<Question> getQuestionTable(int number);
+
+    public void addQuestion(Question question);
+
 }

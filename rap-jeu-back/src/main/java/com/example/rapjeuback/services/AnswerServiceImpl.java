@@ -32,4 +32,9 @@ public class AnswerServiceImpl implements AnswerService{
     public void delete(Long id) {
         answerDao.deleteById(id);
     }
+
+    @Override
+    public void addAnswer(Answer answer) {
+        answerDao.addAnswer(answer);
+    }
 }
