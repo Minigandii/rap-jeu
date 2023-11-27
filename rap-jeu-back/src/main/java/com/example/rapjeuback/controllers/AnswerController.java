@@ -4,10 +4,11 @@ package com.example.rapjeuback.controllers;
 import com.example.rapjeuback.DTO.AnswerDto;
 import com.example.rapjeuback.models.Answer;
 import com.example.rapjeuback.models.Question;
-import com.example.rapjeuback.models.Rapper;
 import com.example.rapjeuback.services.AnswerService;
 import com.example.rapjeuback.services.QuestionService;
 import com.example.rapjeuback.services.RapperService;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.text.similarity.LevenshteinDistance;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
@@ -58,25 +59,40 @@ public class AnswerController {
 
     @PostMapping("/rapper/{idRapper}")
     public RedirectView verifyAnswerRapper(@PathVariable Long idRapper, @RequestBody String rapperNameInput, HttpSession session) {
-        LevenshteinDistance levenshteinDistance = LevenshteinDistance.getDefaultInstance();
-
-        String rapperName = rapperService.getById(idRapper).get().getName();
-
-        int distance = levenshteinDistance.apply(rapperNameInput.toLowerCase(), rapperName.toLowerCase());
-
-        int similarity =(int) rapperName.length()/5;
-
-        if( distance <= similarity ){
-
-            int score = (int) session.getAttribute("score");
-
-            score+=20;
-
-            session.setAttribute("score",score);
-
-            System.out.println("Bien vu");
-
+        if (session.getAttribute("score")==null){
+            int score =0;
+            session.setAttribute("score", score);
         }
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            JsonNode jsonNode = objectMapper.readTree(rapperNameInput);
+
+            // Extraire la valeur associée à la clé "nom"
+            String rapperNameParsed = jsonNode.get("rapperNameInput").asText();
+
+            LevenshteinDistance levenshteinDistance = LevenshteinDistance.getDefaultInstance();
+
+            String rapperName = rapperService.getById(idRapper).get().getName();
+
+            int distance = levenshteinDistance.apply(rapperNameParsed.toLowerCase(), rapperName.toLowerCase());
+
+            int similarity = rapperName.length()/3;
+
+            if( distance <= similarity ){
+                int score = (int) session.getAttribute("score");
+
+                score+=20;
+
+                session.setAttribute("score",score);
+
+                System.out.println("Bien vu");
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
         return new RedirectView("/game/sendQuestion");
     }
