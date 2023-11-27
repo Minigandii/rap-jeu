@@ -1,5 +1,6 @@
 package com.example.rapjeuback.services;
 
+import com.example.rapjeuback.DTO.AnswerDto;
 import com.example.rapjeuback.models.Answer;
 import com.example.rapjeuback.repositories.AnswerDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,11 @@ public class AnswerServiceImpl implements AnswerService{
     final
     AnswerDao answerDao;
 
-    public AnswerServiceImpl(AnswerDao answerDao) {
+    final QuestionService questionService;
+
+    public AnswerServiceImpl(AnswerDao answerDao, QuestionService questionService) {
         this.answerDao = answerDao;
+        this.questionService = questionService;
     }
 
     @Override
@@ -39,7 +43,12 @@ public class AnswerServiceImpl implements AnswerService{
     }
 
     @Override
-    public void addAnswer(Answer answer) {
+    public void addAnswer(AnswerDto answerDto) {
+        Answer answer = Answer.AnswerBuilder.anAnswer()
+                .withGoodAnswer(answerDto.isGoodAnswer())
+                .withAnswerTextQuestion(answerDto.getAnswerTextQuestion())
+                .withQuestion(questionService.getById(answerDto.getId()).get())
+                .build();
         answerDao.addAnswer(answer);
     }
 }

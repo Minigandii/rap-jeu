@@ -7,16 +7,15 @@ public class AnswerDto {
     private String answerTextQuestion;
     private boolean goodAnswer;
 
-    // Vous pouvez également inclure d'autres propriétés si nécessaire
+    private int question;
 
     public AnswerDto() {
-        // Constructeur par défaut
     }
 
-    public AnswerDto(Long id, String answerTextQuestion, boolean goodAnswer) {
-        this.id = id;
+    public AnswerDto(String answerTextQuestion, boolean goodAnswer, int question) {
         this.answerTextQuestion = answerTextQuestion;
         this.goodAnswer = goodAnswer;
+        this.question = question;
     }
 
     // Getters et Setters
@@ -26,6 +25,10 @@ public class AnswerDto {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public int getQuestion() {
+        return question;
     }
 
     public String getAnswerTextQuestion() {
@@ -44,13 +47,11 @@ public class AnswerDto {
         this.goodAnswer = goodAnswer;
     }
 
-    // Méthode de conversion d'une entité Answer vers un DTO AnswerDto
     public static AnswerDto fromEntity(Answer answer) {
         AnswerDto answerDto = new AnswerDto();
         answerDto.setId(answer.getId());
         answerDto.setAnswerTextQuestion(answer.getAnswerTextQuestion());
         answerDto.setGoodAnswer(answer.isGoodAnswer());
-        // Vous pouvez ajouter d'autres propriétés si nécessaire
         return answerDto;
     }
 }
