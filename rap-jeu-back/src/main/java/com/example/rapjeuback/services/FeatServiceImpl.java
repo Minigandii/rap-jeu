@@ -1,9 +1,7 @@
 package com.example.rapjeuback.services;
 
-import com.example.rapjeuback.jpa.JpaFeatDao;
+import com.example.rapjeuback.JPA.JpaFeatDao;
 import com.example.rapjeuback.models.Feat;
-import com.example.rapjeuback.repositories.FeatDao;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,8 +10,12 @@ import java.util.Optional;
 @Service
 public class FeatServiceImpl implements FeatService {
 
-    @Autowired
+    final
     JpaFeatDao featRepository;
+
+    public FeatServiceImpl(JpaFeatDao featRepository) {
+        this.featRepository = featRepository;
+    }
 
 
     @Override

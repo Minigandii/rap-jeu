@@ -5,11 +5,14 @@
         <button class="btn flash-button">{{rapper.nickname}}</button>
         <h1>Devine quel est le rappeur caché sous ce surnom</h1>
       </div>
-      <div>
-        <!--<button class="btn flash-button">{{rapper.name}}</button> -->
-        <input type="text" id="maBoiteDeSaisie" placeholder="Saisissez votre réponse">
-        <button id="validerButton">Valider</button>
-      </div>
+      <form [formGroup]="rapperNameForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="rapperNameInput">Question Text:</label>
+          <input type="text" id="rapperNameInput" placeholder="Saisissez votre réponse" formControlName="rapperNameInput">
+          <button type="submit" [disabled]="rapperNameForm.invalid">Réponse</button>
+        </div>
+      </form>
+
     </div>
   </body>
 </ng-container>

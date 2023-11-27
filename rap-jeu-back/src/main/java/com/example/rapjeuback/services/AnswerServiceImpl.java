@@ -1,5 +1,6 @@
 package com.example.rapjeuback.services;
 
+import com.example.rapjeuback.DTO.AnswerDto;
 import com.example.rapjeuback.models.Answer;
 import com.example.rapjeuback.repositories.AnswerDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,16 @@ import java.util.Optional;
 @Service
 public class AnswerServiceImpl implements AnswerService{
 
-    @Autowired
+    final
     AnswerDao answerDao;
+
+    final QuestionService questionService;
+
+    public AnswerServiceImpl(AnswerDao answerDao, QuestionService questionService) {
+        this.answerDao = answerDao;
+        this.questionService = questionService;
+    }
+
     @Override
     public List<Answer> findAll() {
         return answerDao.findAll();
@@ -31,5 +40,15 @@ public class AnswerServiceImpl implements AnswerService{
     @Override
     public void delete(Long id) {
         answerDao.deleteById(id);
+    }
+
+    @Override
+    public void addAnswer(AnswerDto answerDto) {
+        Answer answer = Answer.AnswerBuilder.anAnswer()
+                .withGoodAnswer(answerDto.isGoodAnswer())
+                .withAnswerTextQuestion(answerDto.getAnswerTextQuestion())
+                .withQuestion(questionService.getById(answerDto.getId()).get())
+                .build();
+        answerDao.addAnswer(answer);
     }
 }

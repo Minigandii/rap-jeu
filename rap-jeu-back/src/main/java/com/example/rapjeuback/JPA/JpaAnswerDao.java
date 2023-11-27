@@ -1,4 +1,4 @@
-package com.example.rapjeuback.jpa;
+package com.example.rapjeuback.JPA;
 
 import com.example.rapjeuback.models.Answer;
 import com.example.rapjeuback.models.Question;
@@ -60,5 +60,10 @@ public class JpaAnswerDao implements AnswerDao {
     @Override
     public void deleteById(Long id) {
 
+    }
+
+    @Override
+    public void addAnswer(Answer answer) {
+        entityManager.persist(answer);
     }
 }
