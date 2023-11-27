@@ -1,6 +1,6 @@
 package com.example.rapjeuback.services;
 
-import com.example.rapjeuback.jpa.JpaRapperDao;
+import com.example.rapjeuback.JPA.JpaRapperDao;
 import com.example.rapjeuback.models.Rapper;
 import org.springframework.stereotype.Service;
 

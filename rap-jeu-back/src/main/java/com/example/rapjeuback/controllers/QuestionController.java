@@ -1,6 +1,7 @@
 package com.example.rapjeuback.controllers;
 
 
+import com.example.rapjeuback.DTO.QuestionDto;
 import com.example.rapjeuback.models.Question;
 import com.example.rapjeuback.models.Rapper;
 import com.example.rapjeuback.services.QuestionService;
@@ -43,8 +44,8 @@ public class QuestionController {
     }
 
     @PostMapping("/add")
-    public void addQuestion(@RequestBody Question question) {
-        questionService.addQuestion(question);
+    public void addQuestion(@RequestBody QuestionDto questionDto) {
+        questionService.addQuestion(questionDto);
     }
 
 }

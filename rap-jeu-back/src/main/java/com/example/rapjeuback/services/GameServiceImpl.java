@@ -1,8 +1,7 @@
 package com.example.rapjeuback.services;
 
-import com.example.rapjeuback.jpa.JpaGameDao;
+import com.example.rapjeuback.JPA.JpaGameDao;
 import com.example.rapjeuback.models.Game;
-import com.example.rapjeuback.repositories.GameDao;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

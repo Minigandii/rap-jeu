@@ -1,6 +1,5 @@
-package com.example.rapjeuback.jpa;
+package com.example.rapjeuback.JPA;
 
-import com.example.rapjeuback.models.Question;
 import com.example.rapjeuback.models.Question;
 import com.example.rapjeuback.repositories.QuestionDao;
 import javax.transaction.Transactional;

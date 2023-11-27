@@ -1,4 +1,4 @@
-package com.example.rapjeuback.jpa;
+package com.example.rapjeuback.JPA;
 
 import com.example.rapjeuback.models.Answer;
 import com.example.rapjeuback.models.Question;

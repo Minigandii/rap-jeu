@@ -1,5 +1,6 @@
 package com.example.rapjeuback.services;
 
+import com.example.rapjeuback.DTO.QuestionDto;
 import com.example.rapjeuback.models.Question;
 
 import java.util.List;
@@ -16,6 +17,6 @@ public interface QuestionService {
 
     List<Question> getQuestionTable(int number);
 
-    public void addQuestion(Question question);
+    void addQuestion(QuestionDto question);
 
 }

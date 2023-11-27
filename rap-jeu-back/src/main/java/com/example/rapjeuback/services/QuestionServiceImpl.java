@@ -3,7 +3,8 @@ package com.example.rapjeuback.services;
 import java.util.List;
 import java.util.Optional;
 
-import com.example.rapjeuback.jpa.JpaQuestionDao;
+import com.example.rapjeuback.DTO.QuestionDto;
+import com.example.rapjeuback.JPA.JpaQuestionDao;
 import com.example.rapjeuback.models.Question;
 import org.springframework.stereotype.Service;
 
@@ -41,7 +42,12 @@ public class QuestionServiceImpl implements QuestionService{
     }
 
     @Override
-    public void addQuestion(Question question) {
+    public void addQuestion(QuestionDto questionDto) {
+        Question question = Question.QuestionBuilder.aQuestion()
+                .withQuestionText(questionDto.getQuestionText())
+                .withPhoto(questionDto.getPhoto())
+                .withPoint(questionDto.getPoint())
+                .build();
         questionDao.addQuestion(question);
     }
 
