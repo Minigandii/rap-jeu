@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
 export class HomeComponent {
   constructor(private gameService: GameService,private router: Router) {}
   onClickButton() {
-    console.log('Bouton cliqué');
-    this.gameService.initGame().subscribe(() => this.router.navigate(["game/init"]));
+    console.log('Bouton cliqué 1');
+    this.gameService.initGame().subscribe(() => this.router.navigate(["game/sendQuestion"]));
   }
 }

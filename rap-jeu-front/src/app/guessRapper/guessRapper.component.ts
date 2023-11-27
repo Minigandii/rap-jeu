@@ -31,7 +31,7 @@ export class GuessRapperComponent {
     });
   }
 
-  /*onSubmit() {
+  /*onSubmit(){
     // Vérifiez si la réponse n'est pas vide avant de l'envoyer
     if (this.userResponse.trim() !== '') {
       this.rapper$.subscribe((rapper) => {

@@ -12,6 +12,7 @@ export class GameService {
 
   initGame(): Observable<any> {
     console.log('Bouton cliqué');
-    return this.http.get('http://localhost:8080/game/init');
+    return this.http.get('http://localhost:8080/game/sendQuestion');
   }
+
 }

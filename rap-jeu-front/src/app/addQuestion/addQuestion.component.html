@@ -1,0 +1,14 @@
+<body>
+<form [formGroup]="addQuestionForm" (ngSubmit)="onSubmit()">
+  <label for="questionText">Question Text:</label>
+  <input type="text" id="questionText" formControlName="questionText" />
+
+  <label for="point">nb Point:</label>
+  <input type="number" id="point" formControlName="point" />
+
+  <label for="type">Type de Question:</label>
+  <input type="text" id="type" formControlName="type" />
+
+  <button type="submit" [disabled]="addQuestionForm.invalid">Add Question</button>
+</form>
+</body>
