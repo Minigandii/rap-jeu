@@ -3,13 +3,17 @@ body {
   padding: 0;
   height: 100vh;
   display: flex;
+  flex-direction: column; /* Modifier la direction en colonne pour empiler les conteneurs */
   justify-content: center;
   align-items: center;
   background-color: yellow;
 }
 
 .container {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto; /* Déplace le conteneur en bas de la page */
 }
 
 .flash-button {
