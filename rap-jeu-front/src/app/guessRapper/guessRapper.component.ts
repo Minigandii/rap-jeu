@@ -1,9 +1,11 @@
 import {Component, Injectable} from "@angular/core"
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Observable, map} from "rxjs";
 import {Rapper} from "../models/rapper.model";
 import {Question} from "../models/question.model";
 import {GuessRapperService} from "../services/guessRapper.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {HttpClient} from "@angular/common/http";
 
 
 @Injectable({
@@ -17,12 +19,19 @@ import {GuessRapperService} from "../services/guessRapper.service";
 export class GuessRapperComponent {
 
   rapper$: Observable<Rapper> | undefined
-  userResponse: string = '';
+  rapperNameForm: FormGroup;
 
   constructor(
+    private fb: FormBuilder,
     private guessRapperService: GuessRapperService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router,
+    private http: HttpClient
   ) {
+    this.rapperNameForm = this.fb.group({
+      rapperNameInput: ['', Validators.required],
+    });
+
     this.route.paramMap.subscribe(params => {
       const idRapper = +params.get('idRapper')!;
 
@@ -31,28 +40,15 @@ export class GuessRapperComponent {
     });
   }
 
-  /*onSubmit(){
-    // Vérifiez si la réponse n'est pas vide avant de l'envoyer
-    if (this.userResponse.trim() !== '') {
-      this.rapper$.subscribe((rapper) => {
-        this.question$.subscribe((question) => {
-          if (rapper && question) {
-            this.guessRapperService.submitGuess(rapper.id, question.id, this.userResponse).subscribe(
-              (response) => {
-                console.log('Réponse soumise avec succès :', response);
-                // Réinitialisez la réponse après la soumission si nécessaire
-                this.userResponse = '';
-              },
-              (error) => {
-                console.error('Erreur lors de la soumission de la réponse :', error);
-                // Gérez l'erreur selon les besoins
-              }
-            );
-          }
-        });
-      });
-    } else {
-      console.warn('La réponse ne peut pas être vide.');
+  onSubmit(): void {
+    if (this.rapperNameForm.valid) {
+      const rapperName = this.rapperNameForm.value;
+
+      // Replace 'backendUrl' with your actual backend URL
+      const backendUrl = 'http://localhost:8080/answers/rapper/1';
+
+      this.http.post(backendUrl, rapperName).subscribe(() => this.router.navigate([""]));
+
     }
-  }*/
+  }
 }
