@@ -53,11 +53,12 @@ public class GameController {
 
             List<Question> questionTable = questionService.getQuestionTable(10);
 
-            Game game = new Game();
+            int score = 0;
 
             List<Rapper> rapperTable = rapperService.getRapperTable(2);
 
             session.setAttribute("questionTable", questionTable);
+            session.setAttribute("score", score);
             session.setAttribute("rapperTable", rapperTable);
 
             return new RedirectView("/game/sendQuestion");
