@@ -1,5 +1,6 @@
 package com.example.rapjeuback.services;
 
+import com.example.rapjeuback.DTO.AnswerDto;
 import com.example.rapjeuback.models.Answer;
 import org.springframework.stereotype.Service;
 
@@ -13,5 +14,5 @@ public interface AnswerService {
     Answer save(Answer answer) ;
     void delete(Long id) ;
 
-    void addAnswer(Answer answer);
+    void addAnswer(AnswerDto answerDto);
 }
