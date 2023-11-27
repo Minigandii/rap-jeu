@@ -12,8 +12,12 @@ import java.util.Optional;
 @Service
 public class FeatServiceImpl implements FeatService {
 
-    @Autowired
+    final
     JpaFeatDao featRepository;
+
+    public FeatServiceImpl(JpaFeatDao featRepository) {
+        this.featRepository = featRepository;
+    }
 
 
     @Override

@@ -11,8 +11,13 @@ import java.util.Optional;
 @Service
 public class AnswerServiceImpl implements AnswerService{
 
-    @Autowired
+    final
     AnswerDao answerDao;
+
+    public AnswerServiceImpl(AnswerDao answerDao) {
+        this.answerDao = answerDao;
+    }
+
     @Override
     public List<Answer> findAll() {
         return answerDao.findAll();
