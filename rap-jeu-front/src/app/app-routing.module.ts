@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: 'questions/guessRapper/:idRapper', component: GuessRapperComponent },
   { path: 'game/questionFlash/:idQuestion/:idRapper', component: QuestionFlashComponent},
-  { path: "addQuestion", component: AddQuestionComponent },
+  { path: "questions/add", component: AddQuestionComponent },
 
 ];
 

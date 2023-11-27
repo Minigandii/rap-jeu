@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GameService } from '../services/game.service';
 import {HttpClient} from "@angular/common/http";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-addQuestion',
@@ -11,10 +12,11 @@ import {HttpClient} from "@angular/common/http";
 export class AddQuestionComponent {
 
   addQuestionForm: FormGroup;
-  constructor(private fb: FormBuilder, private gameService: GameService, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
     this.addQuestionForm = this.fb.group({
-      questionText: ['', Validators.required],
+      photo: null,
       point: [0, Validators.min(0)], // Add validators as needed
+      questionText: ['', Validators.required],
       type: ['', Validators.required],
     });
   }
@@ -26,7 +28,9 @@ export class AddQuestionComponent {
       // Replace 'backendUrl' with your actual backend URL
       const backendUrl = 'http://localhost:8080/questions/add';
 
-      this.http.post(backendUrl, questionData);
+      this.http.post(backendUrl, questionData).subscribe(() => this.router.navigate([""]));
+
+      console.log("abc");
     }
   }
 
