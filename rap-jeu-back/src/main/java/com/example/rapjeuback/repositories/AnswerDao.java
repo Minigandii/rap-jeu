@@ -18,4 +18,6 @@ public interface AnswerDao {
     Optional<Answer> getById(Long id);
 
     void deleteById(Long id);
+
+    void addAnswer(Answer answer);
 }

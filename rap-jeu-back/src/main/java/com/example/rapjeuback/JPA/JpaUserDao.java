@@ -1,4 +1,4 @@
-package com.example.rapjeuback.jpa;
+package com.example.rapjeuback.JPA;
 
 import com.example.rapjeuback.models.User;
 import com.example.rapjeuback.repositories.UserDao;

@@ -16,4 +16,6 @@ public interface QuestionDao {
     void deleteById(Long id);
 
     List<Question> getQuestionTable(int number);
+
+    void addQuestion(Question question);
 }

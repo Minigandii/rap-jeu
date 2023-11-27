@@ -1,6 +1,7 @@
 package com.example.rapjeuback.controllers;
 
 
+import com.example.rapjeuback.DTO.QuestionDto;
 import com.example.rapjeuback.models.Question;
 import com.example.rapjeuback.models.Rapper;
 import com.example.rapjeuback.services.QuestionService;
@@ -41,14 +42,10 @@ public class QuestionController {
     public void deleteQuestion(@PathVariable Long id) {
         questionService.delete(id);
     }
-    /*
-    @PostMapping("")
+
+    @PostMapping("/add")
     public void addQuestion(@RequestBody QuestionDto questionDto) {
         questionService.addQuestion(questionDto);
     }
 
-    @PostMapping("/{id}")
-    public void updateQuestion(@RequestBody QuestionDto questionDto, @PathVariable Long id) {
-        questionService.updateQuestion(questionDto, id);
-    }*/
 }

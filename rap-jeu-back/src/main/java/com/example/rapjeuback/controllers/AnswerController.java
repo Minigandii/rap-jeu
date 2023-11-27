@@ -47,7 +47,10 @@ public class AnswerController {
 
 
     }
-
+    @PostMapping("/add")
+    public void addAnswer(@RequestBody Answer answer) {
+        answerService.addAnswer(answer);
+    }
     @DeleteMapping("/{id}")
     public void deleteAnswer(@PathVariable Long id) {
         answerService.delete(id);
