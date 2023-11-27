@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS game (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    score INT NOT NULL,
+    game_time INT NOT NULL
+);

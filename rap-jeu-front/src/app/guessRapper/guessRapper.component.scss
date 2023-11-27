@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+}
+
+.container {
+  text-align: center;
+}
+
+.flash-button {
+  @keyframes flash {
+    0% {
+      background-color: #FF0000;
+    }
+    50% {
+      background-color: #FF4500;
+    }
+    100% {
+      background-color: #FF0000;
+    }
+  }
+
+  animation: flash 2s infinite; /* Effet de flash rouge sur le bouton */
+  font-size: 4rem;
+}
