@@ -4,13 +4,13 @@ public class QuestionDto {
     private String questionText;
     private int point;
     private String photo;
-    private String questionType;
+    private String type;
 
-    public QuestionDto(String questionText, int point, String photo, String questionType) {
+    public QuestionDto(String photo, String questionText, int point, String type) {
         this.questionText = questionText;
         this.point = point;
         this.photo = photo;
-        this.questionType = questionType;
+        this.type = type;
     }
 
     public String getQuestionText() {
@@ -25,7 +25,7 @@ public class QuestionDto {
         return photo;
     }
 
-    public String getQuestionType() {
-        return questionType;
+    public String gettype() {
+        return type;
     }
 }
